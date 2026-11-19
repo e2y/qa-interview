@@ -26,7 +26,7 @@ main {
   gap: 0.75rem;
 }
 
-.form-row input {
+.form-row select {
   flex: 1;
   min-width: 0;
   padding: 0.6rem;
@@ -37,12 +37,12 @@ button {
   cursor: pointer;
 }
 
-#form-message {
+#shop-message {
   min-height: 1.5em;
   color: #a12424;
 }
 
-#task-list {
+#cart-items {
   display: grid;
   gap: 0.75rem;
   padding-left: 0;

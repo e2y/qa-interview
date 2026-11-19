@@ -2,12 +2,13 @@
   "name": "qa-bdd-interview-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "A small TypeScript Todo app for discussing QA, Cucumber, and Playwright",
+  "description": "A small TypeScript T-shirt shop for discussing QA, Cucumber, and Playwright",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.json",
     "start": "npm run build && node dist/app/server.js",
     "install:browser": "playwright install chromium",
     "test": "npm run build && start-server-and-test 'node dist/app/server.js' http://127.0.0.1:4173/ 'cucumber-js --config cucumber.json'",

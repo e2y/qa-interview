@@ -3,25 +3,40 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Simple Todo</title>
+    <title>Classic Tee Shop</title>
     <link rel="stylesheet" href="/styles.css" />
     <script src="/app.js" defer></script>
   </head>
   <body>
     <main>
-      <h1>Simple Todo</h1>
-      <form id="task-form">
-        <label for="task-input">Task name</label>
-        <div class="form-row">
-          <input id="task-input" name="task" autocomplete="off" />
-          <button type="submit">Add task</button>
-        </div>
-        <p id="form-message" role="status" aria-live="polite"></p>
-      </form>
+      <h1>Classic Tee Shop</h1>
 
-      <section aria-labelledby="tasks-heading">
-        <h2 id="tasks-heading">Tasks</h2>
-        <ul id="task-list" aria-label="Task list"></ul>
+      <section aria-labelledby="product-heading">
+        <h2 id="product-heading">Classic Tee</h2>
+        <p>Everyday cotton T-shirt</p>
+        <p>Price: <strong>$20.00</strong></p>
+
+        <form id="product-form">
+          <label for="size-select">Size</label>
+          <div class="form-row">
+            <select id="size-select" name="size">
+              <option value="">Select a size</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+            <button type="submit">Add to cart</button>
+          </div>
+          <p id="shop-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section aria-labelledby="cart-heading">
+        <h2 id="cart-heading">Shopping cart</h2>
+        <ul id="cart-items" aria-label="Shopping cart"></ul>
+        <p>Total: <output id="cart-total" aria-label="Cart total">$0.00</output></p>
+        <button id="checkout-button" type="button">Checkout</button>
       </section>
     </main>
   </body>

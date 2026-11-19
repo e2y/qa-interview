@@ -50,5 +50,5 @@ const server = createServer(async (request, response) => {
 
 const port = Number(process.env.PORT ?? 4173)
 server.listen(port, '0.0.0.0', () => {
-  console.log(`Todo app listening on http://127.0.0.1:${port}`)
+  console.log(`T-shirt shop listening on http://127.0.0.1:${port}`)
 })

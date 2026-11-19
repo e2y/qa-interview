@@ -1,6 +1,6 @@
 # QA BDD interview demo
 
-A small standalone TypeScript Todo app and browser-test example for discussing QA engineering, BDD, Cucumber, and Playwright. The project is intentionally simple: the goal is to talk through the behavior and test choices, not to build a production test framework.
+A small standalone TypeScript T-shirt shop and browser-test example for discussing QA engineering, BDD, Cucumber, and Playwright. Its shopping flow is inspired by the [PetShop example](https://github.com/thenifemi/PetShop), but this is a small local web app—not a port of that Flutter/Firebase Android project. It stays deterministic with no credentials or external services.
 
 ## Run locally
 
@@ -18,6 +18,8 @@ npm test
 
 The Docker image uses Microsoft's Playwright image pinned to `v1.56.1-noble`; the installed `playwright` package is pinned to the same version so its browser binaries match.
 
+See Microsoft's [Playwright Docker guide](https://playwright.dev/docs/docker) for the standard image and container options.
+
 ```sh
 docker build -t qa-bdd-interview .
 docker run --rm qa-bdd-interview
@@ -31,8 +33,8 @@ docker run --rm -p 4173:4173 qa-bdd-interview npm start
 
 ## Project map
 
-- `app/` — the tiny Todo app and its static TypeScript server
-- `features/todo.feature` — three readable behavior scenarios
+- `app/` — the tiny shop app and its static TypeScript server
+- `features/shop.feature` — readable scenarios for selecting sizes, cart totals, and checkout
 - `features/step-definitions/` — TypeScript Cucumber steps using Playwright locators
 - `features/support/world.ts` — one isolated browser context per scenario
 - `tsconfig.json` — TypeScript build configuration; compiled output goes to ignored `dist/`

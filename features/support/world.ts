@@ -10,11 +10,11 @@ import { chromium, type Browser, type BrowserContext, type Page } from 'playwrig
 
 let browser: Browser | undefined
 
-export class TodoWorld extends World {
+export class ShopWorld extends World {
   context?: BrowserContext
   page!: Page
 
-  async openTodoApp(): Promise<void> {
+  async openShop(): Promise<void> {
     if (!browser) {
       throw new Error('Playwright browser has not been started.')
     }
@@ -25,17 +25,17 @@ export class TodoWorld extends World {
   }
 }
 
-setWorldConstructor(TodoWorld)
+setWorldConstructor(ShopWorld)
 
 BeforeAll(async () => {
   browser = await chromium.launch({ headless: true })
 })
 
-Before(async function (this: TodoWorld) {
-  await this.openTodoApp()
+Before(async function (this: ShopWorld) {
+  await this.openShop()
 })
 
-After(async function (this: TodoWorld) {
+After(async function (this: ShopWorld) {
   await this.context?.close()
 })
 
