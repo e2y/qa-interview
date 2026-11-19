@@ -1,0 +1,10 @@
+node_modules/
+test-results/
+playwright-report/
+.DS_Store
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/highlightedFiles.xml
+/.idea/modules.xml
+/.idea/qa-bdd-interview.iml
+/.idea/vcs.xml

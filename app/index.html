@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Todo</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Simple Todo</h1>
+      <form id="task-form">
+        <label for="task-input">Task name</label>
+        <div class="form-row">
+          <input id="task-input" name="task" autocomplete="off" />
+          <button type="submit">Add task</button>
+        </div>
+        <p id="form-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <section aria-labelledby="tasks-heading">
+        <h2 id="tasks-heading">Tasks</h2>
+        <ul id="task-list" aria-label="Task list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
