@@ -10,6 +10,6 @@ RUN npm ci
 
 COPY app ./app
 COPY features ./features
-COPY cucumber.js ./
+COPY cucumber.json tsconfig.json ./
 
 CMD ["npm", "test"]

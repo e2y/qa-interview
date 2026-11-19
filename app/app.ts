@@ -1,9 +1,13 @@
-const form = document.querySelector('#task-form')
-const input = document.querySelector('#task-input')
-const list = document.querySelector('#task-list')
-const message = document.querySelector('#form-message')
+const form = document.querySelector<HTMLFormElement>('#task-form')
+const input = document.querySelector<HTMLInputElement>('#task-input')
+const list = document.querySelector<HTMLUListElement>('#task-list')
+const message = document.querySelector<HTMLParagraphElement>('#form-message')
 
-form.addEventListener('submit', (event) => {
+if (!form || !input || !list || !message) {
+  throw new Error('Todo app form elements are missing.')
+}
+
+form.addEventListener('submit', (event: SubmitEvent) => {
   event.preventDefault()
 
   const taskName = input.value.trim()

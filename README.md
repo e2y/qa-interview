@@ -1,6 +1,6 @@
 # QA BDD interview demo
 
-A small standalone Todo app and browser-test example for discussing QA engineering, BDD, Cucumber, and Playwright. The project is intentionally simple: the goal is to talk through the behavior and test choices, not to build a production test framework.
+A small standalone TypeScript Todo app and browser-test example for discussing QA engineering, BDD, Cucumber, and Playwright. The project is intentionally simple: the goal is to talk through the behavior and test choices, not to build a production test framework.
 
 ## Run locally
 
@@ -23,7 +23,7 @@ docker build -t qa-bdd-interview .
 docker run --rm qa-bdd-interview
 ```
 
-The container starts the app and runs the BDD scenarios. To make the app available from the host as well, override the command and publish its port:
+The container compiles the TypeScript, starts the app, and runs the BDD scenarios. To make the app available from the host as well, override the command and publish its port:
 
 ```sh
 docker run --rm -p 4173:4173 qa-bdd-interview npm start
@@ -31,10 +31,11 @@ docker run --rm -p 4173:4173 qa-bdd-interview npm start
 
 ## Project map
 
-- `app/` — the tiny Todo app and its static Node.js server
+- `app/` — the tiny Todo app and its static TypeScript server
 - `features/todo.feature` — three readable behavior scenarios
-- `features/step-definitions/` — Cucumber steps using Playwright locators
-- `features/support/world.js` — one isolated browser context per scenario
+- `features/step-definitions/` — TypeScript Cucumber steps using Playwright locators
+- `features/support/world.ts` — one isolated browser context per scenario
+- `tsconfig.json` — TypeScript build configuration; compiled output goes to ignored `dist/`
 - `Dockerfile` — reproducible browser test runtime
 
 Interview materials are kept separately in the sibling folder `../qa-engineer-interview/`; they are not part of this project.

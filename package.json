@@ -2,19 +2,22 @@
   "name": "qa-bdd-interview-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "A small Todo app for discussing QA, Cucumber, and Playwright",
+  "description": "A small TypeScript Todo app for discussing QA, Cucumber, and Playwright",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "start": "node app/server.mjs",
+    "build": "tsc -p tsconfig.json",
+    "start": "npm run build && node dist/app/server.js",
     "install:browser": "playwright install chromium",
-    "test": "start-server-and-test start http://127.0.0.1:4173/ 'cucumber-js'",
-    "test:features": "cucumber-js"
+    "test": "npm run build && start-server-and-test 'node dist/app/server.js' http://127.0.0.1:4173/ 'cucumber-js --config cucumber.json'",
+    "test:features": "npm run build && cucumber-js --config cucumber.json"
   },
   "devDependencies": {
     "@cucumber/cucumber": "13.3.0",
+    "@types/node": "^26.0.0",
     "playwright": "1.56.1",
-    "start-server-and-test": "2.0.13"
+    "start-server-and-test": "2.0.13",
+    "typescript": "^5.9.3"
   }
 }
