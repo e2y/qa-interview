@@ -1,6 +1,6 @@
 # QA BDD interview demo
 
-A small standalone TypeScript T-shirt shop and browser-test example for discussing QA engineering, BDD, Cucumber, and Playwright. Its shopping flow is inspired by the [PetShop example](https://github.com/thenifemi/PetShop), but this is a small local web app—not a port of that Flutter/Firebase Android project. It stays deterministic with no credentials or external services.
+A small standalone TypeScript T-shirt shop and browser-test example for discussing QA engineering, BDD, Cucumber, and Playwright. Its shopping flow is inspired by the [PetShop example](https://github.com/thenifemi/PetShop), but this is a small local web app—not a port of that Flutter/Firebase Android project. It stays deterministic with no credentials or external services. The feature file contains 25 happy-path scenarios.
 
 ## Run locally
 
